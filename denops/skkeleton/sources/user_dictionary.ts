@@ -2,6 +2,7 @@ import { config } from "../config.ts";
 import { getKanaTable } from "../kana.ts";
 import type { CompletionData, RankData } from "../types.ts";
 import {
+  condingCookie,
   Dictionary as BaseDictionary,
   HenkanType,
   okuriAriMarker,
@@ -199,6 +200,7 @@ export class Dictionary implements UserDictionary {
       a[0].localeCompare(b[0])
     ).map((e) => `${e[0]} /${e[1].join("/")}/`);
     const data = [
+      [condingCookie],
       [okuriAriMarker],
       okuriAri,
       [okuriNasiMarker],
